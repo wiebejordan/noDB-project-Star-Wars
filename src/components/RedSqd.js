@@ -8,13 +8,15 @@ class RedSqd extends Component {
     }
   }
 
-render(){
-  return (
-    <div>
-      {this.props.fighter.name}
-    </div>
-  )
-}
+  render(){
+    return (
+      <div>
+        <img className='x-wing' src={this.props.fighter.img}/>
+        <p>{this.props.fighter.name}</p>
+        <p>Pilot: {this.props.fighter.pilot}</p>
+      </div>
+    )
+  }
 
 
 

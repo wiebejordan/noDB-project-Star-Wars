@@ -12,7 +12,7 @@ import RedSqd from './RedSqd';
    return (
      <div>
        <h1>Your Squadron</h1>
-       <div className='flight-flex'>
+       <div>
           {mapFighters}
        </div>
      </div>

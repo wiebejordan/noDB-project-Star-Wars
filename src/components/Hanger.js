@@ -35,12 +35,12 @@ class Hanger extends Component {
 
     return(
       <div>
-        <div className='fighter-flex'>
+        {/* <div className='fighter-flex'>
         <img className='x-wing' src={'https://2.bp.blogspot.com/-C4ZktyJdXaw/V5tjqcRjboI/AAAAAAAB4J0/-yhhtknB7N00tGYXYnO8PfpSo2jKLSoRACLcB/s1600/X-Wing_Top.jpg'}/>
         <img className='x-wing' src={'https://i.pinimg.com/originals/22/b8/1b/22b81bf5335e2ebdab606702ffd4ef46.jpg'}/>
         <img className='x-wing' src={'https://gundampros.com/wp-content/uploads/2020/05/a-wing-starfighter-11.jpg'}/>
         <img className='x-wing' src={'https://vignette.wikia.nocookie.net/starwars/images/5/5b/Bwing_negvv.jpg/revision/latest?cb=20120115155839'}/>
-        </div>
+        </div> */}
         <div className='fighter-info-flex'>
         {mapFighters}
         </div>
