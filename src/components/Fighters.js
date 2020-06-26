@@ -7,7 +7,7 @@ class Fighters extends Component {
         name: fighter.name,
         pilot: ''
       }
-      this.props.chooseFn(fighter.name)
+      this.props.chooseFn(fighterChoice)
     }
     render(){
       return(

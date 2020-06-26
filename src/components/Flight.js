@@ -1,5 +1,22 @@
 import React, {Component} from 'react';
+import RedSqd from './RedSqd';
 
 
+ const Flight = props => {
+    const mapFighters = props.chosenFighters.map((fighter, i) => (
+      <RedSqd
+        key={i}
+        fighter={fighter}/>
+    ))  
 
-default export Flight;
+   return (
+     <div>
+       <h1>Your Squadron</h1>
+       <div className='flight-flex'>
+          {mapFighters}
+       </div>
+     </div>
+   )
+ }
+
+export default Flight;
