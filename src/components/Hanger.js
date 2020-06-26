@@ -29,7 +29,7 @@ class Hanger extends Component {
       <Fighters
           key={i}
           fighter = {fighter}
-          />
+          chooseFn= {this.props.chooseFn}/>
     ))
 
 

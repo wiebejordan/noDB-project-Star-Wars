@@ -7,6 +7,21 @@
   
 }
 
+.y-wing {
+  height: 150px;
+  
+}
+
+.a-wing {
+  height: 150px;
+  
+}
+
+.b-wing {
+  height: 150px;
+  
+}
+
 .fighter-flex{
   display: flex;
   justify-content: space-around;
