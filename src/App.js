@@ -31,6 +31,24 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  editPilot = (id, newPilot) => {
+    let body = {pilot: newPilot};
+
+    axios.put(`/api/fighters/${id}`, body)
+    .then(res => {
+      this.setState({chosenFighters: res.data})
+    })
+    .catch(err => console.log(err));
+  }
+
+  pilotKia = (id) => {
+    axios.delete(`/api/fighters/${id}`)
+    .then(res => {
+      this.setState({chosenFighters: res.data})
+    })
+    .catch(err => console.log(err));
+  }
+
   render(){
   return (
     <div className="App">
@@ -38,7 +56,9 @@ class App extends Component {
       <Hanger 
         chooseFn={this.chooseFighter}/>
       <Flight 
-         chosenFighters={this.state.chosenFighters}/>
+         chosenFighters={this.state.chosenFighters}
+         pilotFn={this.editPilot}
+         kiaFn={this.pilotKia}/>
     </div>
   );
   }

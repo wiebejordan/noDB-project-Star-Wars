@@ -33,3 +33,14 @@
   padding-left: 30px;
 }
 
+.flight-display{
+  display: flex;
+  justify-content: center;
+}
+
+.red {
+  width: 33vw;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

@@ -6,14 +6,20 @@ import RedSqd from './RedSqd';
     const mapFighters = props.chosenFighters.map((fighter, i) => (
       <RedSqd
         key={i}
-        fighter={fighter}/>
+        fighter={fighter}
+        pilotFn= {props.pilotFn}
+        kiaFn= {props.kiaFn}/>
     ))  
 
    return (
      <div>
        <h1>Your Squadron</h1>
-       <div>
-          {mapFighters}
+       <div className='flight-display'>
+         <div className='red'>
+           {mapFighters}
+         </div>
+         
+          
        </div>
      </div>
    )
