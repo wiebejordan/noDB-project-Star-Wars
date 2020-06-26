@@ -2,3 +2,18 @@
   text-align: center;
 }
 
+.x-wing {
+  height: 150px;
+  
+}
+
+.fighter-flex{
+  display: flex;
+  justify-content: space-around;
+}
+
+.fighter-info-flex{
+  display: flex;
+  justify-content: space-around;
+  padding-left: 30px;
+}

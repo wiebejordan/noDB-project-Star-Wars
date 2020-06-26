@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import Hanger from './components/Hanger';
+import Header from './components/Header'
 import axios from 'axios';
 import './App.css';
 
 
-class App extends Component() {
+class App extends Component {
   constructor(props){
     super(props);
   }
@@ -12,6 +13,7 @@ class App extends Component() {
   render(){
   return (
     <div className="App">
+      <Header />
       <Hanger />
     </div>
   );
