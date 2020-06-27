@@ -11,9 +11,11 @@ class App extends Component {
     super(props);
     this.state = {
       chosenFighters: [],
+      chosenGoldFighters: [],
       whoEdits: true
     }
     this.chooseFighter = this.chooseFighter.bind(this);
+    this.chooseGoldFighter = this.chooseGoldFighter.bind(this);
   }
 
   componentDidMount(){
@@ -22,6 +24,10 @@ class App extends Component {
         this.setState({chosenFighters: res.data})
       })
       .catch(err => console.log(err));
+    axios.get('/api/fighters')
+      .then(res => {
+        this.setState({chosenGoldFighters: res.data})
+      })
   }
 
   chooseFighter(fighter){
@@ -70,11 +76,13 @@ class App extends Component {
     this.setState({whoEdits: !this.state.whoEdits})
   }
 
-  chooseGoldFighter(fighter){
+  //GOlD SQUADRON************************************************
+
+  chooseGoldFighter(goldFighter){
     if(this.state.whoEdits === false){
-    axios.post('/api/fighters', {fighter: fighter})
+    axios.post('/api/fighters', {goldFighter: goldFighter})
       .then(res => {
-        this.setState({chosenFighters: res.data})
+        this.setState({chosenGoldFighters: res.data})
       })
       .catch(err => console.log(err));
     } 
@@ -86,7 +94,7 @@ class App extends Component {
 
     axios.put(`/api/fighters/${id}`, body)
     .then(res => {
-      this.setState({chosenFighters: res.data})
+      this.setState({chosenGoldFighters: res.data})
     })
     .catch(err => console.log(err));
     }
@@ -96,7 +104,7 @@ class App extends Component {
     if(this.state.whoEdits === false){
     axios.delete(`/api/fighters/${id}`)
     .then(res => {
-      this.setState({chosenFighters: res.data})
+      this.setState({chosenGoldFighters: res.data})
     })
     .catch(err => console.log(err));
     }
@@ -107,12 +115,22 @@ class App extends Component {
     <div className="App">
       <Header />
       <Hanger 
-        chooseFn={this.chooseFighter}/>
+        chooseFn={this.chooseFighter}
+        chooseGoldFn={this.chooseGoldFighter}/>
       <Flight 
          chosenFighters={this.state.chosenFighters}
          pilotFn={this.editPilot}
          kiaFn={this.pilotKia}
-         clearFn={this.clearAll}/>
+         
+         chosenGoldFighters={this.state.chosenGoldFighters}
+         goldPilotFn={this.editGoldPilot}
+         goldKiaFn={this.goldPilotKia}
+         
+         clearFn={this.clearAll}
+         />
+         
+         
+
          
     </div>
   );

@@ -2,7 +2,7 @@ const chosenGoldFighters = [];
 let id = 1;
 
 module.exports = {
-  getChosenFighters: (req, res) => {
+  getChosenGoldFighters: (req, res) => {
     res.status(200).send(chosenGoldFighters);
     
   },
