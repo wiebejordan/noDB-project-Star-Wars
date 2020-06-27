@@ -16,7 +16,10 @@ class App extends Component {
     }
     this.chooseFighter = this.chooseFighter.bind(this);
     this.chooseGoldFighter = this.chooseGoldFighter.bind(this);
+    // this.toggleSqd = this.toggleSqd.bind(this);
   }
+
+  
 
   componentDidMount(){
     axios.get('/api/fighters')
@@ -72,9 +75,9 @@ class App extends Component {
   
   }
 
-  toggleSqd(){
+  toggleSqd =() =>
     this.setState({whoEdits: !this.state.whoEdits})
-  }
+  
 
   //GOlD SQUADRON************************************************
 
@@ -127,6 +130,7 @@ class App extends Component {
          goldKiaFn={this.goldPilotKia}
          
          clearFn={this.clearAll}
+         toggleSqd={this.toggleSqd}
          />
          
          

@@ -9,9 +9,10 @@ class Flight extends Component{
   }
 
   render(){
-    const rand1 = Math.ceil(Math.random() * 10);
-    const rand2 = Math.ceil(Math.random() * 4);
-    const rand3 = Math.ceil(Math.random() * 100);
+    const rand1 = Math.floor(Math.random() * 10);
+    const rand2 = Math.floor(Math.random() * 3);
+    const rand3 = Math.floor(Math.random() * 3);
+    const rand4 = Math.ceil(Math.random() * 100);
 
     const mapFighters = this.props.chosenFighters.map((fighter, i) => (
       <RedSqd
@@ -38,8 +39,12 @@ class Flight extends Component{
 
    return (
      <div>
-       <h1>Your Squadron</h1>
-       <button onClick={() => alert(`Battle Report: Enemy Destroyed:${rand1} Pilots KIA: ${rand2} Squadron Morale: ${rand3}%`)}>LAUNCH</button>
+       <h1>Your Squadrons</h1>
+        <label class="switch">
+          <input type="checkbox" onClick={() => this.props.toggleSqd()}/>
+          <span class="slider round"></span>
+        </label>
+       <button onClick={() => alert(`Battle Report: Enemy Destroyed:${rand1} Red Squadron pilots KIA: ${rand2} Gold Squadron pilots KIA: ${rand3} Squadron Morale: ${rand4}%`)}>LAUNCH</button>
        <div className='flight-display'>
          <div className='red'>
            {mapFighters}
