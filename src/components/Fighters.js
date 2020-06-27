@@ -5,7 +5,7 @@ class Fighters extends Component {
       const {fighter} = this.props;
       let fighterChoice = {
         name: fighter.name,
-        pilot: '____',
+        pilot: "___",
         img: 'https://2.bp.blogspot.com/-C4ZktyJdXaw/V5tjqcRjboI/AAAAAAAB4J0/-yhhtknB7N00tGYXYnO8PfpSo2jKLSoRACLcB/s1600/X-Wing_Top.jpg'
       }
       

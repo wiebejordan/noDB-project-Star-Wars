@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   chooseFighter(fighter){
-    axios.post('/api/fighters', {fighter})
+    axios.post('/api/fighters', {fighter: fighter})
       .then(res => {
         this.setState({chosenFighters: res.data})
       })
@@ -47,7 +47,7 @@ class App extends Component {
       this.setState({chosenFighters: res.data})
     })
     .catch(err => console.log(err));
-  }
+  } 
 
   render(){
   return (
