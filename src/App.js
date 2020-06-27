@@ -10,7 +10,8 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      chosenFighters: []
+      chosenFighters: [],
+      whoEdits: true
     }
     this.chooseFighter = this.chooseFighter.bind(this);
   }
@@ -24,14 +25,17 @@ class App extends Component {
   }
 
   chooseFighter(fighter){
+    if(this.state.whoEdits === true){
     axios.post('/api/fighters', {fighter: fighter})
       .then(res => {
         this.setState({chosenFighters: res.data})
       })
       .catch(err => console.log(err));
+    }
   }
 
   editPilot = (id, newPilot) => {
+    if(this.state.whoEdits === true){
     let body = {pilot: newPilot};
 
     axios.put(`/api/fighters/${id}`, body)
@@ -39,23 +43,64 @@ class App extends Component {
       this.setState({chosenFighters: res.data})
     })
     .catch(err => console.log(err));
+    }
   }
 
   pilotKia = (id) => {
+    if(this.state.whoEdits === true){
     axios.delete(`/api/fighters/${id}`)
     .then(res => {
       this.setState({chosenFighters: res.data})
     })
     .catch(err => console.log(err));
+    }
   } 
 
   clearAll = (id) => {
+    
     axios.delete(`/api/fighters/${id}`)
     .then(res => {
       this.setState({chosenFighters: res.data})
     })
     .catch(err => console.log(err));
+  
   }
+
+  toggleSqd(){
+    this.setState({whoEdits: !this.state.whoEdits})
+  }
+
+  chooseGoldFighter(fighter){
+    if(this.state.whoEdits === false){
+    axios.post('/api/fighters', {fighter: fighter})
+      .then(res => {
+        this.setState({chosenFighters: res.data})
+      })
+      .catch(err => console.log(err));
+    } 
+  }
+
+  editGoldPilot = (id, newPilot) => {
+    if(this.state.whoEdits === false){
+    let body = {pilot: newPilot};
+
+    axios.put(`/api/fighters/${id}`, body)
+    .then(res => {
+      this.setState({chosenFighters: res.data})
+    })
+    .catch(err => console.log(err));
+    }
+  }
+
+  goldPilotKia = (id) => {
+    if(this.state.whoEdits === false){
+    axios.delete(`/api/fighters/${id}`)
+    .then(res => {
+      this.setState({chosenFighters: res.data})
+    })
+    .catch(err => console.log(err));
+    }
+  } 
 
   render(){
   return (

@@ -6,7 +6,7 @@ module.exports = {
     res.status(200).send(chosenFighters);
     
   },
-  chooseFighters: (req, res) => {
+  chooseFighter: (req, res) => {
     const {fighter} = req.body;
 
     
@@ -38,8 +38,8 @@ module.exports = {
   },
   clearAll: (req, res) => {
 
-    const i = chosenFighters.findIndex(e => req.params.id === +id);
-    chosenFighters.splice(0,3)
+    
+    chosenFighters = [];
     res.status(200).send(chosenFighters);
   }
 }

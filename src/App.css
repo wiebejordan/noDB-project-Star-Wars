@@ -39,11 +39,19 @@
 
 .flight-display{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .red {
   width: 33vw;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap-reverse;
+}
+
+.gold {
+  width: 33vw;
+  
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap-reverse;
