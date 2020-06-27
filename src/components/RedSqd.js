@@ -25,6 +25,7 @@ class RedSqd extends Component {
   render(){
     return (
       <div>
+        
         <img className='x-wing' src={this.props.fighter.img}/>
         {this.state.isEditing
         ? (

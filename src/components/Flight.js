@@ -8,7 +8,9 @@ import RedSqd from './RedSqd';
         key={i}
         fighter={fighter}
         pilotFn= {props.pilotFn}
-        kiaFn= {props.kiaFn}/>
+        kiaFn= {props.kiaFn}
+        />
+        
     ))  
 
    return (
@@ -18,9 +20,8 @@ import RedSqd from './RedSqd';
          <div className='red'>
            {mapFighters}
          </div>
-         
-          
-       </div>
+      </div>
+      <button onClick={() => this.props.clearFn(this.props.chosenFighters)}>Clear Squadron</button>
      </div>
    )
  }

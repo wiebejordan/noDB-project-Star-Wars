@@ -12,10 +12,7 @@ class Fighters extends Component {
       this.props.chooseFn(fighterChoice)
     }
     render(){
-      const xImg = '';
-      const yImg = '';
-      const aImg = '';
-      const bImg = '';
+      
 
       return(
         <div onClick={this.handleChoice}>

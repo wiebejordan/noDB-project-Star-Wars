@@ -4,15 +4,21 @@ let id = 1;
 module.exports = {
   getChosenFighters: (req, res) => {
     res.status(200).send(chosenFighters);
+    
   },
   chooseFighters: (req, res) => {
     const {fighter} = req.body;
 
+    
     fighter.id = id;
-    id++;
-
+    id++
+    
+    
+    
+    if(chosenFighters.length < 3){
     chosenFighters.push(fighter);
     res.status(200).send(chosenFighters);
+    }
   },
   editPilot: (req, res) => {
     const {id} = req.params;
@@ -23,10 +29,17 @@ module.exports = {
     res.status(200).send(chosenFighters)
   },
   pilotKia: (req, res) => {
-    const {id} = req.params;
+    // const {id} = req.params;
 
-    const i = chosenFighters.findIndex(e => e.id === +id); 
+    const i = chosenFighters.findIndex(e => req.params.id === +id); 
     chosenFighters.splice(i, 1);
+    
+    res.status(200).send(chosenFighters);
+  },
+  clearAll: (req, res) => {
+
+    const i = chosenFighters.findIndex(e => req.params.id === +id);
+    chosenFighters.splice(0,3)
     res.status(200).send(chosenFighters);
   }
 }

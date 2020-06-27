@@ -49,6 +49,14 @@ class App extends Component {
     .catch(err => console.log(err));
   } 
 
+  clearAll = (id) => {
+    axios.delete(`/api/fighters/${id}`)
+    .then(res => {
+      this.setState({chosenFighters: res.data})
+    })
+    .catch(err => console.log(err));
+  }
+
   render(){
   return (
     <div className="App">
@@ -58,7 +66,9 @@ class App extends Component {
       <Flight 
          chosenFighters={this.state.chosenFighters}
          pilotFn={this.editPilot}
-         kiaFn={this.pilotKia}/>
+         kiaFn={this.pilotKia}
+         clearFn={this.clearAll}/>
+         
     </div>
   );
   }
