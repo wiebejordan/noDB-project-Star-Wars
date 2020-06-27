@@ -9,7 +9,7 @@ class Hanger extends Component {
     
     this.state = {
         fighterChoices: [],
-        // goldFighterChoices: []
+        goldFighterChoices: []
     }
   }
 
@@ -31,11 +31,11 @@ class Hanger extends Component {
           key={i}
           fighter = {fighter}
           chooseFn= {this.props.chooseFn}
-          chooseGoldFn={this.props.chooseGoldFn}
+          chooseGoldFn= {this.props.chooseGoldFn}
           />
     ))
 
-    // const mapGoldFighters = this.state.fighterChoices.map((fighter, i) => (
+    // const mapGoldFighters = this.state.goldFighterChoices.map((fighter, i) => (
     //   <Fighters
     //       key={i}
     //       fighter = {fighter}

@@ -7,7 +7,9 @@ class Fighters extends Component {
         name: fighter.name,
         pilot: "___",
         img: 'https://2.bp.blogspot.com/-C4ZktyJdXaw/V5tjqcRjboI/AAAAAAAB4J0/-yhhtknB7N00tGYXYnO8PfpSo2jKLSoRACLcB/s1600/X-Wing_Top.jpg'
-      }
+      };
+      this.handleGoldChoice();
+
       
       this.props.chooseFn(fighterChoice)
     }

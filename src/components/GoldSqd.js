@@ -18,7 +18,7 @@ class GoldSqd extends Component {
   }
 
   handleEdit = (id,) => {
-    this.props.pilotFn(id, this.state.pilotInput);
+    this.props.goldPilotFn(id, this.state.pilotInput);
     this.handleToggle();
   }
 
@@ -47,7 +47,7 @@ class GoldSqd extends Component {
           </div>
           
           )}
-        <button onClick={() => this.props.kiaFn(this.props.fighter.id)}>Pilot KIA</button>
+        <button onClick={() => this.props.goldKiaFn(this.props.fighter.id)}>Pilot KIA</button>
         
       </div>
     ) 

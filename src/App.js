@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       chosenFighters: [],
       chosenGoldFighters: [],
-      whoEdits: true
+      whoEdits: false
     }
     this.chooseFighter = this.chooseFighter.bind(this);
     this.chooseGoldFighter = this.chooseGoldFighter.bind(this);
@@ -78,9 +78,9 @@ class App extends Component {
 
   //GOlD SQUADRON************************************************
 
-  chooseGoldFighter(goldFighter){
+  chooseGoldFighter(fighter){
     if(this.state.whoEdits === false){
-    axios.post('/api/fighters', {goldFighter: goldFighter})
+    axios.post('/api/fighters', {fighter: fighter})
       .then(res => {
         this.setState({chosenGoldFighters: res.data})
       })
