@@ -12,11 +12,11 @@ class App extends Component {
     this.state = {
       chosenFighters: [],
       chosenGoldFighters: [],
-      whoEdits: false
+      whoEdits: true
     }
     this.chooseFighter = this.chooseFighter.bind(this);
     this.chooseGoldFighter = this.chooseGoldFighter.bind(this);
-    // this.toggleSqd = this.toggleSqd.bind(this);
+    
   }
 
   
@@ -119,7 +119,10 @@ class App extends Component {
       <Header />
       <Hanger 
         chooseFn={this.chooseFighter}
-        chooseGoldFn={this.chooseGoldFighter}/>
+        chooseGoldFn={this.chooseGoldFighter}
+        toggleSqd={this.toggleSqd}
+        whoEdits={this.state.whoEdits}/>
+        
       <Flight 
          chosenFighters={this.state.chosenFighters}
          pilotFn={this.editPilot}

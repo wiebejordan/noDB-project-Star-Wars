@@ -27,7 +27,7 @@ class Flight extends Component{
 
     const mapGoldFighters = this.props.chosenGoldFighters.map((fighter, i) => (
       <GoldSqd
-        key={i}
+        goldKey={i}
         fighter={fighter}
         goldPilotFn={this.props.goldPilotFn}
         goldKiaFn={this.props.goldKiaFn}
@@ -40,9 +40,9 @@ class Flight extends Component{
    return (
      <div>
        <h1>Your Squadrons</h1>
-        <label class="switch">
+        <label className="switch">
           <input type="checkbox" onClick={() => this.props.toggleSqd()}/>
-          <span class="slider round"></span>
+          <span className="slider round"></span>
         </label>
        <button onClick={() => alert(`Battle Report: Enemy Destroyed:${rand1} Red Squadron pilots KIA: ${rand2} Gold Squadron pilots KIA: ${rand3} Squadron Morale: ${rand4}%`)}>LAUNCH</button>
        <div className='flight-display'>
