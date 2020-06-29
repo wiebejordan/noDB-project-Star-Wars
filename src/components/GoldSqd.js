@@ -26,10 +26,10 @@ class GoldSqd extends Component {
     return (
       <div>
         
-        <img className='x-wing' src={this.props.fighter.img}/>
+        <img className={this.props.fighter.name} src={this.props.fighter.img}/>
         {this.state.isEditing
         ? (
-          <div>
+          <div className='fighter-text'>
           <input 
             value={this.state.pilotInput}
             onChange={e => this.handleInput(e.target.value)} />

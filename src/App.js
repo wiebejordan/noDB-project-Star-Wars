@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Hanger from './components/Hanger';
 import Header from './components/Header';
 import Flight from './components/Flight';
+import Footer from './components/Footer'
 import axios from 'axios';
 import './App.css';
 
@@ -135,7 +136,7 @@ class App extends Component {
          clearFn={this.clearAll}
          toggleSqd={this.toggleSqd}
          />
-         
+        <Footer/> 
          
 
          

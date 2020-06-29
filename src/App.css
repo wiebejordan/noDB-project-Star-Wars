@@ -1,60 +1,125 @@
 .App {
-  height: 100vh;
-  width: 100vw;
-  /* background-color: black; */
+  height: 1230px;
+  background-image: url(https://i.pinimg.com/originals/fb/65/b6/fb65b695312e0d4a28db569daaa7e33b.jpg); 
+  background-position: center;
+  background-color: black;
+  background-repeat: repeat;
+  background-size: cover;
   text-align: center;
+  display: inline-block;
+  margin: 0;
+  
+  
+  
   
 }
 
-.x-wing {
+.header{
+  background-image: url(https://i2.wp.com/overmental.com/wp-content/uploads/2015/06/TF2.jpg?ssl=1);
+  background-position: center;
+  background-size: cover;
+  margin-top: 0;
   height: 150px;
+  color: gold;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fighters {
+  color: rgb(26, 241, 26);
+  font-weight: 900;
+  
   
 }
 
-.y-wing {
+.X-wing {
   height: 150px;
+  color: green;
+   
+}
+
+.Y-wing {
+  height: 150px;
+  /* width: 125px; */
+  color: green;
+ 
+}
+
+.A-wing {
+  height: 150px;
+  color: green;
+  
   
 }
 
-.a-wing {
+.B-wing {
   height: 150px;
+  color: green
   
-}
-
-.b-wing {
-  height: 150px;
   
 }
 
 .fighter-flex{
+  box-sizing: border-box;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .fighter-info-flex{
+  height: 300px;
+  width: 100vw;
   display: flex;
   justify-content: space-around;
   padding-left: 30px;
+  background-color: grey;
+  background-image: url(https://render.fineartamerica.com/images/rendered/default/greeting-card/images/artworkimages/medium/2/very-grungy-and-dark-concrete-room-for-use-as-background-more-on-this-series-in-my-portafolio-ill-caids-ados.jpg?&targetx=0&targety=-12&imagewidth=700&imageheight=525&modelwidth=700&modelheight=500&backgroundcolor=716E68&orientation=0);
+  background-position: center;
+
 }
 
 .flight-display{
+  height: 600px;
+  width: 100vw;
   display: flex;
   justify-content: space-around;
+  box-sizing: border-box;
+  align-items: center;
+
+  
+}
+
+.your-squadrons{
+  color: gold;
+}
+
+.launch{
+  height: 40px;
+  color: green;
+  border: 2px solid green;
+  background-color: black;
+  font-weight: 900;
 }
 
 .red {
-  width: 33vw;
+  width: 265px;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap-reverse;
+  color: red;
+  font-weight: 900;
 }
 
 .gold {
-  width: 33vw;
+  width: 265px;
   
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap-reverse;
+  color: gold;
+  font-weight: 900;
 }
 
 .switch {
@@ -117,4 +182,15 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.footer {
+  background-color: rgb(97, 28, 23);
+  box-sizing: border-box;
+  height: 50px;
+  margin-top: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50px;
+  color: aliceblue;
 }

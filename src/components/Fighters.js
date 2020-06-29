@@ -31,7 +31,7 @@ class Fighters extends Component {
       const {fighter} = this.props;
       let goldFighterChoice = {
         name: fighter.name,
-        pilot: "___",
+        pilot: '',
         img: this.handleFighterImage(fighter.name)
       }
       
@@ -63,21 +63,21 @@ class Fighters extends Component {
       
 
       return(
-        <div>
+        <div >
           {this.props.whoEdits
           ? (
         <div onClick={this.handleChoice}>
-          <img className='x-wing' src={this.handleFighterImage(this.props.fighter.name)} alt={this.props.fighter.name}/>
-          <p>{this.props.fighter.name}</p>
-          <p>{this.props.fighter.starship_class}</p>
-          <p>Cost:{this.props.fighter.cost_in_credits}</p>
+          <img className={this.props.fighter.name} src={this.handleFighterImage(this.props.fighter.name)} alt={this.props.fighter.name}/>
+          <p className='fighters'>{this.props.fighter.name}</p>
+          <p className='fighters'>{this.props.fighter.starship_class}</p>
+          <p className='fighters'>Cost:{this.props.fighter.cost_in_credits}</p>
         </div>)
         : (
           <div onClick={this.handleGoldChoice}>
-          <img className='x-wing' src={this.handleFighterImage(this.props.fighter.name)} alt={this.props.fighter.name}/>
-          <p>{this.props.fighter.name}</p>
-          <p>{this.props.fighter.starship_class}</p>
-          <p>Cost:{this.props.fighter.cost_in_credits}</p>
+          <img className={this.props.fighter.name} src={this.handleFighterImage(this.props.fighter.name)} alt={this.props.fighter.name}/>
+          <p className='fighters'>{this.props.fighter.name}</p>
+          <p className='fighters'>{this.props.fighter.starship_class}</p>
+          <p className='fighters'>Cost:{this.props.fighter.cost_in_credits}</p>
         </div>
           )}
         </div>
