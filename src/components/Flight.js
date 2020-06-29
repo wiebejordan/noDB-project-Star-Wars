@@ -6,13 +6,26 @@ import GoldSqd from './GoldSqd';
 class Flight extends Component{
   constructor(props){
     super(props)
+    this.state = {
+      flight: false,
+       rand1: Math.floor(Math.random() * 10),
+       rand2: Math.floor(Math.random() * 3),
+       rand3: Math.floor(Math.random() * 3),
+       rand4: Math.ceil(Math.random() * 100)
+    }
+  }
+
+  launchFighters(){
+    this.setState({flight: !this.state.flight});
+    alert(`Battle Report:
+       TIE fighters Destroyed: ${this.state.rand1} 
+       Red Squadron pilots KIA: ${this.state.rand2} 
+       Gold Squadron pilots KIA: ${this.state.rand3} 
+       Squadron Morale: ${this.state.rand4}%`)
   }
 
   render(){
-    const rand1 = Math.floor(Math.random() * 10);
-    const rand2 = Math.floor(Math.random() * 3);
-    const rand3 = Math.floor(Math.random() * 3);
-    const rand4 = Math.ceil(Math.random() * 100);
+    
 
     const mapFighters = this.props.chosenFighters.map((fighter, i) => (
       <RedSqd
@@ -35,11 +48,12 @@ class Flight extends Component{
         
     ));  
 
+      
     
 
    return (
      <div>
-       <h1 className='your-squadrons'>Your Squadrons</h1>
+       <header className='your-squadrons'>Your Squadrons</header>
         <label className="switch">
           <input type="checkbox" onClick={() => this.props.toggleSqd()}/>
           <span className="slider round"></span>
@@ -50,11 +64,7 @@ class Flight extends Component{
          </div>
        <button 
        className='launch' 
-       onClick={() => alert(`Battle Report:
-       Enemy Destroyed: ${rand1} 
-       Red Squadron pilots KIA: ${rand2} 
-       Gold Squadron pilots KIA: ${rand3} 
-       Squadron Morale: ${rand4}%`)}>LAUNCH</button>
+       onClick={() => this.launchFighters()}>LAUNCH</button>
          <div className='gold'>
            {mapGoldFighters}
          </div>
