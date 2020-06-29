@@ -33,7 +33,7 @@ module.exports = {
 
     const i = chosenFighters.findIndex(e => e.id === +id); 
     chosenFighters.splice(i, 1);
-    id--
+    
     
     res.status(200).send(chosenFighters);
   },

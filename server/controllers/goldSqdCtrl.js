@@ -1,5 +1,5 @@
 const chosenGoldFighters = [];
-let goldId = 1;
+let goldId = 4;
 
 module.exports = {
   getChosenGoldFighters: (req, res) => {
@@ -30,11 +30,11 @@ module.exports = {
     res.status(200).send(chosenGoldFighters)
   },
   goldPilotKia: (req, res) => {
-    // const {id} = req.params;
+    const {id} = req.params;
 
-    const i = chosenGoldFighters.findIndex(e => req.params.id === +id); 
-    chosenGoldFighters.splice(i, 1);
-    id--
+    const j = chosenGoldFighters.findIndex(e => e.id === +id); 
+    chosenGoldFighters.splice(j, 1);
+    
     
     res.status(200).send(chosenGoldFighters);
   },

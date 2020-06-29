@@ -25,10 +25,10 @@ class Flight extends Component{
         
     ));  
 
-    const mapGoldFighters = this.props.chosenGoldFighters.map((fighter, i) => (
+    const mapGoldFighters = this.props.chosenGoldFighters.map((goldFighter, j) => (
       <GoldSqd
-        goldKey={i}
-        fighter={fighter}
+        goldKey={j}
+        goldFighter={goldFighter}
         goldPilotFn={this.props.goldPilotFn}
         goldKiaFn={this.props.goldKiaFn}
         />

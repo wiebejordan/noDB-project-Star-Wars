@@ -83,9 +83,9 @@ class App extends Component {
 
   //GOlD SQUADRON************************************************
 
-  chooseGoldFighter(fighter){
+  chooseGoldFighter(goldFighter){
     if(this.state.whoEdits === false){
-    axios.post('/api/gold-fighters', {fighter: fighter})
+    axios.post('/api/gold-fighters', {fighter: goldFighter})
       .then(res => {
         this.setState({chosenGoldFighters: res.data})
       })

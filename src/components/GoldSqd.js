@@ -26,7 +26,7 @@ class GoldSqd extends Component {
     return (
       <div>
         
-        <img className={this.props.fighter.name} src={this.props.fighter.img}/>
+        <img className={this.props.goldFighter.name} src={this.props.goldFighter.img}/>
         {this.state.isEditing
         ? (
           <div className='fighter-text'>
@@ -34,20 +34,20 @@ class GoldSqd extends Component {
             value={this.state.pilotInput}
             onChange={e => this.handleInput(e.target.value)} />
           <button
-            onClick={() => this.handleEdit(this.props.fighter.id)}>
+            onClick={() => this.handleEdit(this.props.goldFighter.id)}>
               Submit</button>
           </div>
         )
         
         : (
           <div>
-          <p>{this.props.fighter.name}</p>
-          <p>Pilot: {this.props.fighter.pilot}</p>
+          <p>{this.props.goldFighter.name}</p>
+          <p>Pilot: {this.props.goldFighter.pilot}</p>
           <button onClick={this.handleToggle}>Edit Pilot</button>
           </div>
           
           )}
-        <button onClick={() => this.props.goldKiaFn(this.props.fighter.id)}>Pilot KIA</button>
+        <button onClick={() => this.props.goldKiaFn(this.props.goldFighter.id)}>Pilot KIA</button>
         
       </div>
     ) 
