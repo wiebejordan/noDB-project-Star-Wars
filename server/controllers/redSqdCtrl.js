@@ -29,10 +29,11 @@ module.exports = {
     res.status(200).send(chosenFighters)
   },
   pilotKia: (req, res) => {
-    // const {id} = req.params;
+    const {id} = req.params;
 
-    const i = chosenFighters.findIndex(e => req.params.id === +id); 
+    const i = chosenFighters.findIndex(e => e.id === +id); 
     chosenFighters.splice(i, 1);
+    id--
     
     res.status(200).send(chosenFighters);
   },

@@ -27,36 +27,37 @@
   align-items: center;
 }
 
-.fighters {
+.fighters-info {
   color: rgb(26, 241, 26);
   font-weight: 900;
+  background-color: black;
   
   
 }
 
 .X-wing {
   height: 150px;
-  color: green;
+  cursor: pointer;
    
 }
 
 .Y-wing {
   height: 150px;
-  /* width: 125px; */
-  color: green;
+  cursor: pointer;
+  
  
 }
 
 .A-wing {
   height: 150px;
-  color: green;
+  cursor: pointer;
   
   
 }
 
 .B-wing {
   height: 150px;
-  color: green
+  cursor: pointer;
   
   
 }

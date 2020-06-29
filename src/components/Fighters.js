@@ -6,12 +6,7 @@ import Bwing from './Bwing.png';
 
 
 class Fighters extends Component {
-  constructor(props){
-    super(props);
-    this.state ={
-      img: 'https://i.pinimg.com/originals/22/b8/1b/22b81bf5335e2ebdab606702ffd4ef46.jpg'
-    }
-  }
+  
   
     handleChoice = () => { 
       const {fighter} = this.props;
@@ -31,7 +26,7 @@ class Fighters extends Component {
       const {fighter} = this.props;
       let goldFighterChoice = {
         name: fighter.name,
-        pilot: '',
+        pilot: '___',
         img: this.handleFighterImage(fighter.name)
       }
       
@@ -68,16 +63,16 @@ class Fighters extends Component {
           ? (
         <div onClick={this.handleChoice}>
           <img className={this.props.fighter.name} src={this.handleFighterImage(this.props.fighter.name)} alt={this.props.fighter.name}/>
-          <p className='fighters'>{this.props.fighter.name}</p>
-          <p className='fighters'>{this.props.fighter.starship_class}</p>
-          <p className='fighters'>Cost:{this.props.fighter.cost_in_credits}</p>
+          <p className='fighters-info'>{this.props.fighter.name}</p>
+          <p className='fighters-info'>{this.props.fighter.starship_class}</p>
+          <p className='fighters-info'>Cost:{this.props.fighter.cost_in_credits}</p>
         </div>)
         : (
           <div onClick={this.handleGoldChoice}>
           <img className={this.props.fighter.name} src={this.handleFighterImage(this.props.fighter.name)} alt={this.props.fighter.name}/>
-          <p className='fighters'>{this.props.fighter.name}</p>
-          <p className='fighters'>{this.props.fighter.starship_class}</p>
-          <p className='fighters'>Cost:{this.props.fighter.cost_in_credits}</p>
+          <p className='fighters-info'>{this.props.fighter.name}</p>
+          <p className='fighters-info'>{this.props.fighter.starship_class}</p>
+          <p className='fighters-info'>Cost:{this.props.fighter.cost_in_credits}</p>
         </div>
           )}
         </div>

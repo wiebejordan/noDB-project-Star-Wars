@@ -32,6 +32,7 @@ class App extends Component {
       .then(res => {
         this.setState({chosenGoldFighters: res.data})
       })
+      .catch(err => console.log(err));
   }
 
   chooseFighter(fighter){
@@ -84,7 +85,7 @@ class App extends Component {
 
   chooseGoldFighter(fighter){
     if(this.state.whoEdits === false){
-    axios.post('/api/fighters', {fighter: fighter})
+    axios.post('/api/gold-fighters', {fighter: fighter})
       .then(res => {
         this.setState({chosenGoldFighters: res.data})
       })
@@ -96,7 +97,7 @@ class App extends Component {
     if(this.state.whoEdits === false){
     let body = {pilot: newPilot};
 
-    axios.put(`/api/fighters/${id}`, body)
+    axios.put(`/api/gold-fighters/${id}`, body)
     .then(res => {
       this.setState({chosenGoldFighters: res.data})
     })
@@ -106,7 +107,7 @@ class App extends Component {
 
   goldPilotKia = (id) => {
     if(this.state.whoEdits === false){
-    axios.delete(`/api/fighters/${id}`)
+    axios.delete(`/api/gold-fighters/${id}`)
     .then(res => {
       this.setState({chosenGoldFighters: res.data})
     })
@@ -117,6 +118,7 @@ class App extends Component {
   render(){
   return (
     <div className="App">
+      <Footer/>
       <Header />
       <Hanger 
         chooseFn={this.chooseFighter}

@@ -48,8 +48,10 @@ class Flight extends Component{
          <div className='red'>
            {mapFighters}
          </div>
-       <button className='launch' onClick={() => alert(`Battle Report:
-       Enemy Destroyed:${rand1} 
+       <button 
+       className='launch' 
+       onClick={() => alert(`Battle Report:
+       Enemy Destroyed: ${rand1} 
        Red Squadron pilots KIA: ${rand2} 
        Gold Squadron pilots KIA: ${rand3} 
        Squadron Morale: ${rand4}%`)}>LAUNCH</button>

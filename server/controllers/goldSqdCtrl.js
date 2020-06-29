@@ -8,15 +8,16 @@ module.exports = {
   },
   chooseGoldFighter: (req, res) => {
     const {fighter} = req.body;
+    const goldFighter = fighter
 
     
-    fighter.id = goldId;
+    goldFighter.id = goldId;
     goldId++
     
     
     
     if(chosenGoldFighters.length < 3){
-    chosenGoldFighters.push(fighter);
+    chosenGoldFighters.push(goldFighter);
     res.status(200).send(chosenGoldFighters);
     }
   },
@@ -33,7 +34,7 @@ module.exports = {
 
     const i = chosenGoldFighters.findIndex(e => req.params.id === +id); 
     chosenGoldFighters.splice(i, 1);
-    
+    id--
     
     res.status(200).send(chosenGoldFighters);
   },
