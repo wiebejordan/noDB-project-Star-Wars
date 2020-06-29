@@ -14,6 +14,7 @@ class Flight extends Component{
        rand4: Math.ceil(Math.random() * 100)
     }
   }
+  
 
   toggleFlight(){
     if(this.props.chosenFighters.length === 3 && this.props.chosenGoldFighters.length === 3){

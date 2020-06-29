@@ -35,7 +35,7 @@
   color: rgb(26, 241, 26);
   font-weight: 900;
   background-color: black;
-  
+  margin: 0px;
   
 }
 
@@ -78,7 +78,9 @@
   width: 100vw;
   display: flex;
   justify-content: space-around;
-  padding-left: 30px;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 60px;
   background-color: grey;
   background-image: url(https://render.fineartamerica.com/images/rendered/default/greeting-card/images/artworkimages/medium/2/very-grungy-and-dark-concrete-room-for-use-as-background-more-on-this-series-in-my-portafolio-ill-caids-ados.jpg?&targetx=0&targety=-12&imagewidth=700&imageheight=525&modelwidth=700&modelheight=500&backgroundcolor=716E68&orientation=0);
   background-position: center;
