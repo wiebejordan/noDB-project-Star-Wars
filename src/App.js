@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Hanger from './components/Hanger';
 import Header from './components/Header';
 import Flight from './components/Flight';
-import Footer from './components/Footer'
+import Footer from './components/Footer';
 import axios from 'axios';
 import './App.css';
 
@@ -13,10 +13,12 @@ class App extends Component {
     this.state = {
       chosenFighters: [],
       chosenGoldFighters: [],
-      whoEdits: true
+      whoEdits: true,
+      // count: 0,
     }
     this.chooseFighter = this.chooseFighter.bind(this);
     this.chooseGoldFighter = this.chooseGoldFighter.bind(this);
+    // this.handleCounter = this.handleCounter.bind(this);
     
   }
 
@@ -67,18 +69,26 @@ class App extends Component {
     }
   } 
 
-  clearAll = (id) => {
+  // clearAll = (id) => {
     
-    axios.delete(`/api/fighters/${id}`)
-    .then(res => {
-      this.setState({chosenFighters: res.data})
-    })
-    .catch(err => console.log(err));
+  //   axios.delete(`/api/fighters/${id}`)
+  //   .then(res => {
+  //     this.setState({chosenFighters: res.data})
+  //   })
+  //   .catch(err => console.log(err));
   
-  }
+  // }
+
+  // handleCounter(){
+  //   const{chosenFighters} = this.state;
+    
+  //      return this.setState({count: chosenFighters[0].cost + chosenFighters[1].cost +
+  //       chosenFighters[2].cost }) 
+  //     };
 
   toggleSqd =() =>
-    this.setState({whoEdits: !this.state.whoEdits})
+    this.setState({whoEdits: !this.state.whoEdits});
+
   
 
   //GOlD SQUADRON************************************************
@@ -116,15 +126,21 @@ class App extends Component {
   } 
 
   render(){
+    console.log(this.state.chosenFighters);
   return (
     <div className="App">
       <Footer/>
       <Header />
+      {this.state.count}
       <Hanger 
         chooseFn={this.chooseFighter}
         chooseGoldFn={this.chooseGoldFighter}
         toggleSqd={this.toggleSqd}
-        whoEdits={this.state.whoEdits}/>
+        whoEdits={this.state.whoEdits}
+        counterFn={this.handleCounter}
+        // chosenFighters={this.state.chosenFighters}
+        />
+
         
       <Flight 
          chosenFighters={this.state.chosenFighters}

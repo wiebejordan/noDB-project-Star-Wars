@@ -99,9 +99,19 @@
 
 .launch{
   height: 40px;
+  width: 100px;
   color: green;
   border: 2px solid green;
   background-color: black;
+  font-weight: 900;
+}
+
+.nolaunch{
+  height: 40px;
+  width: 100px;
+  color: rgb(95, 90, 90);
+  border: 2px solid grey;
+  background-color: grey;
   font-weight: 900;
 }
 
@@ -164,7 +174,7 @@
 }
 
 input:checked + .slider {
-  background-color: gold;
+  background-color: rgb(212, 182, 7);
 }
 
 input:focus + .slider {

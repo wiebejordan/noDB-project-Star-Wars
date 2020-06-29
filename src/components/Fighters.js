@@ -5,6 +5,7 @@ import Awing from './Awing.png';
 import Bwing from './Bwing.png';
 
 
+
 class Fighters extends Component {
   
   
@@ -13,11 +14,13 @@ class Fighters extends Component {
       let fighterChoice = {
         name: fighter.name,
         pilot: "___",
-        img: this.handleFighterImage(fighter.name)
+        img: this.handleFighterImage(fighter.name),
+        cost: fighter.cost_in_credits
       };
       
 
       this.props.chooseFn(fighterChoice);
+      // this.props.handleCounter();
       }
     
       
@@ -30,7 +33,8 @@ class Fighters extends Component {
         img: this.handleFighterImage(fighter.name)
       }
       
-      this.props.chooseGoldFn(goldFighterChoice)
+      this.props.chooseGoldFn(goldFighterChoice);
+      
     }
 
     handleFighterImage= (name) => {

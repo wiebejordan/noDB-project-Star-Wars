@@ -7,7 +7,7 @@ class Flight extends Component{
   constructor(props){
     super(props)
     this.state = {
-      flight: false,
+      flight: true,
        rand1: Math.floor(Math.random() * 10),
        rand2: Math.floor(Math.random() * 3),
        rand3: Math.floor(Math.random() * 3),
@@ -15,13 +15,20 @@ class Flight extends Component{
     }
   }
 
+  toggleFlight(){
+    if(this.props.chosenFighters.length === 3 && this.props.chosenGoldFighters.length === 3){
+    this.setState({flight: !this.state.flight})}
+
+  }
   launchFighters(){
-    this.setState({flight: !this.state.flight});
-    alert(`Battle Report:
+    if(this.props.chosenFighters.length === 3 && this.props.chosenGoldFighters.length === 3){
+    
+      alert(`Battle Report:
        TIE fighters Destroyed: ${this.state.rand1} 
        Red Squadron pilots KIA: ${this.state.rand2} 
        Gold Squadron pilots KIA: ${this.state.rand3} 
        Squadron Morale: ${this.state.rand4}%`)
+      }
   }
 
   render(){
@@ -62,9 +69,14 @@ class Flight extends Component{
          <div className='red'>
            {mapFighters}
          </div>
+         {this.props.chosenFighters.length === 3 && this.props.chosenGoldFighters.length === 3
+         ? (
        <button 
        className='launch' 
-       onClick={() => this.launchFighters()}>LAUNCH</button>
+       onClick={() => this.launchFighters()}>LAUNCH</button>)
+       : (
+        <button className='nolaunch' onClick={() => this.toggleFlight}>LAUNCH</button>
+       )}
          <div className='gold'>
            {mapGoldFighters}
          </div>

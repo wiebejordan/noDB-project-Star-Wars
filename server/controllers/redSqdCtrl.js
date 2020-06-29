@@ -2,6 +2,7 @@ const chosenFighters = [];
 let id = 1;
 
 module.exports = {
+  
   getChosenFighters: (req, res) => {
     res.status(200).send(chosenFighters);
     

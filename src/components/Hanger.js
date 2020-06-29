@@ -3,6 +3,7 @@ import axios from 'axios';
 import Fighters from './Fighters';
 
 
+
 class Hanger extends Component {
   constructor(props){
     super(props);
@@ -34,16 +35,20 @@ class Hanger extends Component {
           chooseGoldFn= {this.props.chooseGoldFn}
           toggleSqd={this.props.toggleSqd}
           whoEdits={this.props.whoEdits}
-          />
-    ))
-
-
-    return(
-      <div>
-        <div className='fighter-info-flex'>
-        {mapFighters}
-        </div>
-      </div>
+          // counterFn={this.props.counterFn}
+        />
+        
+          ))
+          
+          
+          return(
+            <div>
+              <div className='fighter-info-flex'>
+              {mapFighters}
+               <div>
+               </div>
+              </div>
+            </div>
 
     )
   }

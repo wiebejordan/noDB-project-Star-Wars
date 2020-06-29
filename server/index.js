@@ -14,7 +14,7 @@ app.get('/api/fighters', redSqdCtrl.getChosenFighters);
 app.post('/api/fighters', redSqdCtrl.chooseFighter);
 app.put('/api/fighters/:id', redSqdCtrl.editPilot);
 app.delete('/api/fighters/:id', redSqdCtrl.pilotKia);
-app.delete('/api/fighters/:id', redSqdCtrl.clearAll);
+// app.delete('/api/fighters/:id', redSqdCtrl.clearAll);
 
 app.get('/api/gold-fighters', goldSqdCtrl.getChosenGoldFighters);
 app.post('/api/gold-fighters', goldSqdCtrl.chooseGoldFighter);
