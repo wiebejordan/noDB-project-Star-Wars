@@ -7,10 +7,7 @@
   background-size: cover;
   text-align: center;
   display: inline-block;
-  margin: 0;
-  
-  
-  
+  margin: 0; 
   
 }
 
@@ -26,6 +23,13 @@
   flex-direction: column;
   align-items: center;
 }
+
+.header h1{
+  background-color: black;
+  margin: 0px;
+}
+
+
 
 .fighters-info {
   color: rgb(26, 241, 26);
